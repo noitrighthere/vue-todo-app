@@ -17,8 +17,12 @@ export default {
   },
   methods: {
     addTodo: function() {
-      localStorage.setItem(this.newTodoItem, this.newTodoItem)
+      if(this.newTodoItem !== '') {
+      var obj = {complete: false, item: this.newTodoItem};
+      // javaScript 객체를 string으로 넣어줌
+      localStorage.setItem(this.newTodoItem, JSON.stringify(obj))
       this.clearInput()
+      }
     },
     clearInput: function() {
       this.newTodoItem = ''
