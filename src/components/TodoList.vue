@@ -16,16 +16,16 @@
 <script>
 export default {
   props: ['propsdata'],
-  data: function() {
+  data() {
     return {
       todoItems: []
     }
   },
   methods: {
-    removeTodo: function(todoItem, index) {
+    removeTodo(todoItem, index) {
       this.$emit('removeItem', todoItem, index);
     },
-    toggleComplete: function(todoItem, index) {
+    toggleComplete(todoItem, index) {
       this.$emit('toggleItem', todoItem, index);
     }
   }
